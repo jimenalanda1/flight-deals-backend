@@ -81,13 +81,11 @@ async function fetchCheapestFlights(travelMonths, departureDay, returnDay, numRe
             for (let destination in airportToCity) {
                 console.log(`✈️ Searching flights from EWR to ${airportToCity[destination]} (${destination}) on ${datePair.departure} → ${datePair.return}...`);
                 const browser = await puppeteer.launch({
-                    executablePath: await chromium.executablePath, // Uses Chromium from package
                     headless: true,
-                    args: [
-                        "--no-sandbox",
-                        "--disable-setuid-sandbox"
-                    ]
+                    executablePath: "/usr/bin/google-chrome-stable",
+                    args: ["--no-sandbox", "--disable-setuid-sandbox"]
                 });
+                
                 
                 const page = await browser.newPage();
 
