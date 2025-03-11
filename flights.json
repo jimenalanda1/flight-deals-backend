@@ -1,0 +1,20 @@
+[
+  {
+    "city": "Seoul",
+    "price": 1362,
+    "date": "2025-06-08",
+    "link": "https://www.google.com/travel/flights?q=Flights%20from%20EWR%20to%20ICN%20on%202025-06-08%20returning%202025-06-12&flt=direct"
+  },
+  {
+    "city": "Johannesburg",
+    "price": 1396,
+    "date": "2025-06-01",
+    "link": "https://www.google.com/travel/flights?q=Flights%20from%20EWR%20to%20JNB%20on%202025-06-01%20returning%202025-06-05&flt=direct"
+  },
+  {
+    "city": "Seoul",
+    "price": 1411,
+    "date": "2025-06-15",
+    "link": "https://www.google.com/travel/flights?q=Flights%20from%20EWR%20to%20ICN%20on%202025-06-15%20returning%202025-06-19&flt=direct"
+  }
+]
