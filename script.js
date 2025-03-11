@@ -19,7 +19,7 @@ document.getElementById("searchButton").addEventListener("click", function() {
     // Add timestamp to prevent caching
     const queryString = `months=${adjustedMonths.join(",")}&departureDay=${departureDay}&returnDay=${returnDay}&numResults=${numResults}&nocache=${new Date().getTime()}`;
 
-    fetch(`http://localhost:3000/api/getFlights?${queryString}`, {
+    fetch(`https://flight-deals-backend.onrender.com/api/getFlights?${queryString}`, {
         cache: "no-store"  // Forces browser to always fetch new data
     })
     .then(response => response.json())

@@ -1,4 +1,6 @@
 const puppeteer = require("puppeteer");
+const chromium = require("chrome-aws-lambda"); // Add this package
+
 const fs = require("fs");
 
 const airportToCity = {
@@ -78,7 +80,15 @@ async function fetchCheapestFlights(travelMonths, departureDay, returnDay, numRe
         for (let datePair of allDates) {
             for (let destination in airportToCity) {
                 console.log(`✈️ Searching flights from EWR to ${airportToCity[destination]} (${destination}) on ${datePair.departure} → ${datePair.return}...`);
-                const browser = await puppeteer.launch({ headless: false });
+                const browser = await puppeteer.launch({
+                    executablePath: await chromium.executablePath, // Uses Chromium from package
+                    headless: true,
+                    args: [
+                        "--no-sandbox",
+                        "--disable-setuid-sandbox"
+                    ]
+                });
+                
                 const page = await browser.newPage();
 
                 // Construct Google Flights search URL
